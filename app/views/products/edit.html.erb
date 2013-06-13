@@ -1,0 +1,15 @@
+<h1>Editing product</h1>
+
+<%= form_for(@product) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :price %>
+<%= f.number_field :price %>
+<%= f.label :quantity %>
+<%= f.number_field :quantity %>
+
+<%= f.submit "Save product", class: 'btn btn-large btn-primary' %>
+<% end %>
+
+<%= link_to 'Show', @product %> |
+<%= link_to 'Back', products_path %>

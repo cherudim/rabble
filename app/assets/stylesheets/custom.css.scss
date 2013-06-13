@@ -116,3 +116,13 @@ input {
 	@extend .control-group;
 	@extend .error;
 }
+
+/* Table-addons */
+
+.table-nowrap td, .table-nowrap th {
+	white-space: nowrap;
+}
+
+.table-nowrap td.expand, .table-nowrap th.expand {
+	width: 100%;
+}

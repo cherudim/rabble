@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :signed_in_user, only: [:update, :destroy]
+
   def show
   	@user = User.find(params[:id])
   end
@@ -17,4 +19,9 @@ class UsersController < ApplicationController
   		render 'new'
   	end
   end
+
+  private
+    def signed_in_user
+      redirect_to login_url, notice: 'Please sign in' unless signed_in?
+    end
 end
